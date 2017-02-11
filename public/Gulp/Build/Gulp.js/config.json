@@ -1,0 +1,109 @@
+{
+	"root": {
+		"projectName": "PhoenixFEC",
+		"host": "localhost",
+		"port": 8888,
+		"devSrcDir": "devSources",
+		"devAssetsDir": "static",
+		"distSrcDir": "dist",
+		"distAssetsDir": "static",
+		"deployVersionDir": "v2",
+		"dataDir": "data",
+		"cdnPath": "http://cdn.domain.com/"
+	},
+	"tasksGroup": {
+		"assetTasks": ["fonts", "images", "svgSprite"],
+		"codeTasks": ["css", "js", "html"]
+	},
+	"tasks": {
+		"browserSync": {
+			"server": {
+				"baseDir": "dist"
+			},
+			"port": 8881,
+			"reloadDelay": 500,
+			"files": [
+				"devSources/**",
+				"!devSources/static/js/**",
+				"!devSources/lib/**"
+			]
+		},
+		"zip": {
+			"devSrc": "",
+			"distSrc": "zip",
+			"enable": true
+		},
+		"html": {
+			"devSrc": "html",
+			"distSrc": "html",
+			"htmlmin": {
+				"collapseWhitespace": true
+			},
+			"extensions": ["html", "json", "hbs"],
+			"excludeFolders": ["layouts", "shared", "data"]
+		},
+		"js": {
+			"devSrc": "js",
+			"distSrc": "js",
+			"extensions": ["js", "jsx"],
+			"extractSharedJs": false,
+			"webpackEnable": true
+		},
+		"css": {
+			"devSrc": "scss",
+			"distSrc": "css",
+			"extensions": ["sass", "scss", "css"],
+			"autoprefixer": {
+				"browsers": [
+					"last 2 versions",
+					"safari 5",
+					"ie 8",
+					"ie 9",
+					"opera 12.1",
+					"ios 6",
+					"android 4"
+				]
+			},
+			"sass": {
+				"indentedSyntax": true,
+				"includePaths": [
+					"./node_modules/normalize.css"
+				]
+			}
+		},
+		"images": {
+			"devSrc": "images",
+			"distSrc": "images",
+			"extensions": ["jpg", "png", "gif", "svg"]
+		},
+		"sprites": {
+			"devSrc": "sprites",
+			"imgDistSrc": "sprites",
+			"cssDistSrc": "scss/base",
+			"category": [
+				"base", "home"
+			],
+			"spritesmith": {
+				"retinaSrcFilter": ["sprite/**/*@2x.png"],
+				"retinaImgName": "sprite@2x.png"
+			},
+			"extensions": ["png"]
+		},
+		"fonts": {
+			"devSrc": "fonts",
+			"distSrc": "fonts",
+			"extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+		},
+		"iconFont": {
+			"devSrc": "icons",
+			"distSrc": "fonts",
+			"sassDest": "generated",
+			"extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+		},
+		"svgSprite": {
+			"devSrc": "icons",
+			"distSrc": "images",
+			"extensions": ["svg"]
+		}
+	}
+}

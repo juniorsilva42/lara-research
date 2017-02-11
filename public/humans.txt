@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <JrSilva> -- <jsiilva@outlook.com.br> -- <twitter::jsiilva1>
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, JavaScript ES6, NPM, Bower, Gulp, UI-Kit, Modernizr, jQuery, Normalize.css
+    PHP7, LARAVEL5, Composer, NodeJS, MySQL, Nginx Server Configs, HTTP/2
+    Git, Github, BitBucket

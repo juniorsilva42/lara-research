@@ -1,0 +1,31 @@
+'use strict';
+
+var gulp = require('gulp'),
+    sass = require('gulp-ruby-sass'),
+    cssminifier = require('gulp-csso'),
+    watch = require('gulp-watch'),
+    uglify = require('gulp-uglify');
+
+// Task para minificar o Css
+gulp.task('compresscss', () =>
+    gulp.src('./media/css/*.css').pipe(cssminifier()).pipe(gulp.dest('./media/css'))
+);
+
+// Task para minificar o Js
+gulp.task('compressjs', () =>
+    gulp.src('./build/js/*.js').pipe(uglify()).pipe(gulp.dest('./media/js'))
+);
+
+// Task para o Sass
+gulp.task('sass', () =>
+    sass('./build/sass/**/*.sass')
+        .on('error', sass.logError)
+        .pipe(gulp.dest('./media/css'))
+);
+
+// Task para o Watch
+gulp.task('watch', () =>
+    gulp.watch('./build/sass/**/*.sass', ['sass'])
+);
+
+gulp.task('build', ['sass', 'compresscss', 'watch']);

@@ -1,9 +1,14 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'DefaultSite'], function(){
+
+    Route::get('/categoria/{id}', 'SiteController@categoria');
+
+    Route::get('/', 'SiteController@index');
+    Route::get('/fale-conosco', 'SiteController@fale_conosco');
+
 });
 
-Route::get('/categoria/{catId}', function($catId){
-    return "Posts da categoria <b>{$catId}</b>";
+Route::group(['namespace' => 'Console'], function(){
+    Route::get('/console', 'ConsoleController@index');
 });

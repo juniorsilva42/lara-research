@@ -1,0 +1,22 @@
+{
+  "name": "projetoteste",
+  "description": "Meu projeto de test",
+  "main": "index.js",
+  "authors": [
+    "JrSilva"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "Font-Awesome#^4.7.0"
+  }
+}
