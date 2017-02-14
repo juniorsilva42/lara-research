@@ -11,6 +11,6 @@
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3, JavaScript ES6, NPM, Bower, Gulp, UI-Kit, Modernizr, jQuery, Normalize.css
+    HTML5, CSS3, JavaScript ES6, NPM, Bower, Gulp, UI-Kit, Modernizr, jQuery, Normalize, AtomicDesign
     PHP7, LARAVEL5, Composer, NodeJS, MySQL, Nginx Server Configs, HTTP/2
     Git, Github, BitBucket
