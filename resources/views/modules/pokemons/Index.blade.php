@@ -1,11 +1,12 @@
-<h1>Pokédex</h1><br>
+<h1>Pokédex</h1>
 
 @forelse ($pokemons as $pokemon)
-    <b>ID: </b>#{{ $pokemon->id }}<br>
-    <b>Nome: </b>{{ $pokemon->nome_pokemon }}<br>
-    <b>Tipo: </b>{{ $pokemon->tipo_pokemon }}<br>
-    <b>Força: </b>{{ $pokemon->forca_pokemon }}<br>
-    <b>Poder: </b>{{ $pokemon->poder_pokemon }}<br><br>
+    {{ $pokemon->nome_pokemon }}<br>
+    N° {{ $pokemon->numero_pokemon }}<br>
+    {{ $pokemon->descricao_pokemon }}<br>
+    {{ $pokemon->altura_pokemon }} m<br>
+    {{ $pokemon->categoria_pokemon }}<br>
+    {{ $pokemon->peso_pokemon }} Kg<br><br>
 @empty
     <p>Seus pokémons ficam aqui</p>
 @endforelse

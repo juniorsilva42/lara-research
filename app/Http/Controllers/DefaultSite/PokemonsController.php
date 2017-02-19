@@ -4,19 +4,25 @@ namespace App\Http\Controllers\DefaultSite;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB;
+use App\Models\Pokemons;
 
 
 class PokemonsController extends Controller
 {
+    private $pokemon;
+
+    public function __construct(Pokemons $pokemon){
+        $this->pokemon = $pokemon;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Pokemons $pokemon)
     {
-        $pokemons = DB::table('pokemons')->get();
+        $pokemons = $this->pokemon->all();
         return view('modules.pokemons.index', compact('pokemons'));
     }
 
@@ -25,9 +31,20 @@ class PokemonsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return 'Página para criar novos Pokémons';
+        $values = [
+            'nome_pokemon' => 'Pidgey',
+            'numero_pokemon' => 016,
+            'descricao_pokemon' => 'Pidgey has an extremely sharp sense of direction. It is capable of unerringly returning home to its nest, however far it may be removed from its familiar surroundings.',
+            'altura_pokemon' => '0,3',
+            'categoria_pokemon' => 'Tiny Bird',
+            'peso_pokemon' => '1,8'
+        ];
+
+        $insert = $this->pokemon->insert($values);
+
+        return view('modules.pokemons.create', compact('insert'));
     }
 
     /**
@@ -85,4 +102,11 @@ class PokemonsController extends Controller
     {
         //
     }
+
+    public function tests(){
+        return 'Testes no controller';
+    }
+
+
+
 }

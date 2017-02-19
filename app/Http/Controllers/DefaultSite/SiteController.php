@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class SiteController extends Controller
 {
     public function index(){
-        return view('Modules.Home.Index');
+        return view('modules.home.index');
     }
 
 }
