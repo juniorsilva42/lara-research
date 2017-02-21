@@ -1,15 +1,20 @@
 @extends('templates.app')
+@extends('templates.navbar')
 
-@section('content')
+@section('default_html_content')
+<div class="jumbotron">
+    <h1 class="display-3">Tudo configurado. Bom Job!</h1>
+    <p class="lead">JrSilva - Esqueleto de aplicações</p>
+    
+    <hr class="my-4">
+    
+    <p>Olá mundo! Esse é meu esqueleto básico para construir aplicações para à internet de alto desempenho.</p>
+    
+    <p class="lead">
+         <button class="btn btn-primary btn-lg" onclick=";window.location.href=this.getAttribute('href');return false;" role="link" href="/info" title="Visualizar dados da Aplicação">Visualizar dados da Aplicação</button>
+    </p>
+</div>
+@endsection 
 
-    <div class="jumbotron">
-      <h1 class="display-3">Feito por leitores, para leitores.</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="/signup" role="button">Me inscrever para a versão Beta</a>
-      </p>
-    </div>
 
-@endsection
+

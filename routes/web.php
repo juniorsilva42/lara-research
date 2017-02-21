@@ -7,3 +7,7 @@ Route::resource('/pokemons', 'DefaultSite\PokemonsController');
 Route::get('/signup', function(){
     return view('modules.signup.index');
 });
+
+Route::get('/info', function(){
+    return view('modules.info.index');
+});

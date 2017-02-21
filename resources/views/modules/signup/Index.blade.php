@@ -1,7 +1,6 @@
 @extends('templates.app')
 
 @section('content')
-
       <div class="container">
             <h1 class="display-6">Entrar na lista</h1>
             <form method="POST" action="/">
@@ -9,7 +8,7 @@
                   <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail</label>
                         <div class="col-sm-10">
-                              <input type="email" class="form-control" id="inputEmail3" placeholder="E-mail">
+                              <input type="email" class="form-control" id="inputEmail3" placeholder="E-mail" autocomplete="off">
                         </div>
                   </div>
 
@@ -20,5 +19,4 @@
                   </div>
             </form>
       </div>
-
 @endsection
